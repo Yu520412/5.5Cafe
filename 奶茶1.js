@@ -5,7 +5,7 @@
 const shopConfig = {
     instagram: "https://instagram.com/5point5cafeshop",
     whatsapp: "https://wa.me/60126195988",
-    facebook: "https://facebook.com/your_page",
+    // facebook: "https://facebook.com/your_page",
     googleMaps: "https://maps.app.goo.gl/j25kr4YknTd6H2HN7",
     address: "2G Jalan Bayu Tinggi 2 Klang, 41200 Botanik Klang, Selangor"
 };
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. 自动将顶部配置的变量，填入到网页对应的按钮链接和文本中
     document.getElementById('link-ig').href = shopConfig.instagram;
     document.getElementById('link-whatsapp').href = shopConfig.whatsapp;
-    document.getElementById('link-facebook').href = shopConfig.facebook;
+    // document.getElementById('link-facebook').href = shopConfig.facebook;
     document.getElementById('link-googlemaps').href = shopConfig.googleMaps;
     document.getElementById('shop-address').innerText = shopConfig.address;
 
