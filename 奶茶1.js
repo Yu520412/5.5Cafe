@@ -5,8 +5,8 @@
 const shopConfig = {
     instagram: "https://instagram.com/5point5cafeshop",
     whatsapp: "https://wa.me/60126195988",
-    // facebook: "https://facebook.com/your_page",
-    googleMaps: "https://maps.app.goo.gl/j25kr4YknTd6H2HN7",
+    // facebook: "https://facebook.com/your_page",  // 更改并保持注释状态
+    googleMaps: "https://maps.app.goo.gl/sugrt9Vv5wFxvExz9",
     address: "2G Jalan Bayu Tinggi 2 Klang, 41200 Botanik Klang, Selangor"
 };
 
@@ -18,7 +18,7 @@ const shopConfig = {
 const translations = {
     'zh': {
         'copy_address': '复制地址',
-        'copied': '已复制!',
+        'copied': '已复制地址！',
         'copy_failed': '复制失败，请手动复制地址。',
         'menu_category': '饮品分类',
         'B1': '招牌推荐',
@@ -88,7 +88,7 @@ const translations = {
     },
     'en': {
         'copy_address': 'Copy Address',
-        'copied': 'Copied!',
+        'copied': 'Address copied!',
         'copy_failed': 'Copy failed, please copy manually.',
         'menu_category': 'Categories',
         'B1': 'Signature Picks',
@@ -157,7 +157,7 @@ const translations = {
     },
     'ms': {
         'copy_address': 'Salin Alamat',
-        'copied': 'Disalin!',
+        'copied': 'Alamat telah disalin!',
         'copy_failed': 'Gagal menyalin, sila salin secara manual.',
         'menu_category': 'Kategori',
         'B1': 'Pilihan Signature',
@@ -257,20 +257,31 @@ function changeLanguage(lang) {
 function copyAddress() {
     const addressText = document.getElementById('shop-address').innerText;
     const copyBtn = document.getElementById('copyBtn');
-    const btnText = copyBtn.querySelector('span');
     const btnIcon = copyBtn.querySelector('i');
 
     navigator.clipboard.writeText(addressText).then(() => {
         copyBtn.classList.add('success');
-        // 使用翻译后的 "已复制!"
-        btnText.innerText = translations[currentLang]['copied'];
         btnIcon.className = "fa-solid fa-check";
+
+        // 弹出简易通知提示
+        const toast = document.createElement('div');
+        toast.style.position = 'fixed';
+        toast.style.bottom = '20px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.background = 'rgba(0,0,0,0.8)';
+        toast.style.color = '#fff';
+        toast.style.padding = '8px 16px';
+        toast.style.borderRadius = '20px';
+        toast.style.fontSize = '0.9rem';
+        toast.style.zIndex = '10000';
+        toast.innerText = translations[currentLang]['copied'];
+        document.body.appendChild(toast);
 
         setTimeout(() => {
             copyBtn.classList.remove('success');
-            // 恢复为翻译后的 "复制地址"
-            btnText.innerText = translations[currentLang]['copy_address'];
             btnIcon.className = "fa-regular fa-copy";
+            toast.remove();
         }, 2000);
     }).catch(err => {
         alert(translations[currentLang]['copy_failed']);
@@ -285,11 +296,11 @@ function copyAddress() {
 document.addEventListener('DOMContentLoaded', function() {
     
     // 1. 自动将顶部配置的变量，填入到网页对应的按钮链接和文本中
-    document.getElementById('link-ig').href = shopConfig.instagram;
-    document.getElementById('link-whatsapp').href = shopConfig.whatsapp;
-    // document.getElementById('link-facebook').href = shopConfig.facebook;
-    document.getElementById('link-googlemaps').href = shopConfig.googleMaps;
-    document.getElementById('shop-address').innerText = shopConfig.address;
+    if(document.getElementById('link-ig')) document.getElementById('link-ig').href = shopConfig.instagram;
+    if(document.getElementById('link-whatsapp')) document.getElementById('link-whatsapp').href = shopConfig.whatsapp;
+    // if(document.getElementById('link-facebook')) document.getElementById('link-facebook').href = shopConfig.facebook; // 改好后保持注释，安全不崩溃
+    if(document.getElementById('link-googlemaps')) document.getElementById('link-googlemaps').href = shopConfig.googleMaps;
+    if(document.getElementById('shop-address')) document.getElementById('shop-address').innerText = shopConfig.address;
 
     // 2. 标签切换逻辑：处理左侧分类点击，切换右侧大图
     const tabs = document.querySelectorAll('#category-tabs li');
@@ -306,7 +317,31 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 根据点击的目标，显示对应的图片区块
             const targetId = tab.getAttribute('data-target');
-            document.getElementById(targetId).classList.add('active');
+            if(document.getElementById(targetId)) {
+                document.getElementById(targetId).classList.add('active');
+            }
         });
     });
+
+    // 3. 新增：右侧隐藏式悬浮抽屉菜单点击控制逻辑
+    const socialBox = document.getElementById('socialBox');
+    if (socialBox) {
+        const toggleBtn = socialBox.querySelector('.toggle-btn');
+        
+        // 点击小箭头时，切换显示/隐藏状态
+        toggleBtn.addEventListener('click', function(e) {
+            socialBox.classList.toggle('show');
+            e.stopPropagation(); // 阻止事件冒泡，防止触发下面的全局点击
+        });
+        
+        // 点击页面其余任何区域时，自动把抽屉收起来，打造绝佳交互感
+        document.addEventListener('click', function() {
+            socialBox.classList.remove('show');
+        });
+        
+        // 阻止侧边栏内部点击导致面板意外收起
+        socialBox.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
 });
