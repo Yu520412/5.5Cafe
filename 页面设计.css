@@ -13,7 +13,6 @@
     font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
 
-
 body {
     background-image: url(./背景图/背景2.jpg);
     background-size: cover;
@@ -55,44 +54,13 @@ header {
     object-fit: contain; 
 }
 
-/* ================= 右上角排版与按钮 ================= */
+/* ================= 右上角语言切换器排版 ================= */
 .header-right {
     display: flex;
     flex-direction: column; 
     align-items: flex-end; 
     gap: 12px; 
 }
-
-.social-links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.social-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    padding: 8px 18px; 
-    border-radius: 50px;
-    color: white;
-    font-size: 0.85rem; 
-    font-weight: bold;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.social-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.ig-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-.whatsapp-btn { background: linear-gradient(135deg, #c1f9c6 0%, #86E4A8 20%, #25D366 100%); }
-.facebook-btn { background: linear-gradient(135deg, #83b0f8 0%, #5c94f0 30%, #317bf4 100%); }
-.google-btn { background: linear-gradient(135deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%); }
 
 .address-container {
     display: flex;
@@ -105,16 +73,23 @@ header {
     flex-wrap: wrap;
 }
 
-/* Language Switcher Styling */
 .lang-switcher {
-    background: rgba(255, 255, 255, 0.4); /* Lighter background for language buttons */
+    background: rgba(255, 255, 255, 0.4); 
     padding: 5px 10px;
 }
+
 .lang-btn {
     background: var(--primary-color);
     padding: 5px 12px;
     font-size: 0.8rem;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
+
 .lang-btn:hover {
     background: #6D4C41;
 }
@@ -124,26 +99,95 @@ header {
     font-weight: 500;
 }
 
-.copy-btn {
+/* ================= 新增：右侧隐藏式悬浮抽屉社交栏样式 ================= */
+.floating-social-box {
+    position: fixed;
+    right: -60px; /* 默认把包含图标的面板藏在右边屏幕外 */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 9999; /* 保证浮在最高层，不被任何大图遮挡 */
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 激活状态下的移入动画 */
+.floating-social-box.show {
+    right: 12px;
+}
+
+/* 侧边小箭头触发块 */
+.toggle-btn {
+    width: 26px;
+    height: 55px;
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
+    border-radius: 8px 0 0 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 0.8rem;
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    box-shadow: -3px 2px 10px rgba(0,0,0,0.15);
+    transition: background-color 0.3s;
 }
 
-.copy-btn:hover {
+.toggle-btn:hover {
     background-color: #6D4C41;
 }
 
+/* 展开时让箭头自动旋转 180 度 */
+.floating-social-box.show .toggle-btn i {
+    transform: rotate(180deg);
+}
+
+/* 图标整合面板 */
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* 精致圆形小图标独立按钮通用样式 */
+.circle-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.circle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+/* 各大平台的专属精致渐变/纯色背景 */
+.ig-btn { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.whatsapp-btn { background: linear-gradient(135deg, #7feba7 0%, #3de96d 100%); }
+.facebook-btn { background: linear-gradient(135deg, #1877F2 0%, #166FE5 100%); }
+.google-btn { background: linear-gradient(135deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%); }
+.copy-btn { 
+    background: linear-gradient(135deg, var(--primary-color) 0%, #6D4C41 100%); 
+}
+
+/* 当复制成功时触发的独特紫色极光渐变样式 */
 .copy-btn.success {
-    background: linear-gradient(135deg, #b579f0 20%, #ea62c1 100%);
+    background: linear-gradient(135deg, #b579f0 20%, #ea62c1 100%) !important;
 }
 
 /* ================= 奶茶分类与宽屏图片展示区 ================= */
@@ -223,7 +267,6 @@ header {
     display: flex; 
 }
 
-
 .gallery-item {
     display: flex;
     flex-direction: column;
@@ -232,7 +275,6 @@ header {
     min-width: 280px; 
     border-bottom: 2px solid #6A0DAD;
 }
-
 
 .gallery-item img {
     max-width: 100%; 
@@ -277,7 +319,6 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: all 0.4s ease; 
-    
 }
 
 .gallery-big img:hover {
@@ -286,7 +327,6 @@ header {
         0 15px 35px rgba(224, 176, 255, 0.4), 
         0 5px 15px rgba(255, 192, 203, 0.3);  
 }
-
 
 .gallery-text {
     text-align: center;
@@ -349,6 +389,7 @@ footer {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
 }
 
+/* ================= 响应式媒体查询页面排版优化 ================= */
 @media (max-width: 900px) {
     header {
         flex-direction: column;
@@ -359,10 +400,6 @@ footer {
     .header-right {
         align-items: center;
         margin-top: 15px;
-    }
-
-    .social-links {
-        justify-content: center;
     }
 
     .menu-display-area {
@@ -387,5 +424,28 @@ footer {
     
     .gallery-item, .gallery-big, .menu-list {
         width: 100%; 
+    }
+}
+
+/* 针对移动端特殊调小悬浮抽屉按钮的比例，保障完美空间感 */
+@media (max-width: 600px) {
+    .circle-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.05rem;
+    }
+    .menu-items {
+        padding: 8px;
+        gap: 8px;
+    }
+    .floating-social-box {
+        right: -52px;
+    }
+    .floating-social-box.show {
+        right: 6px;
+    }
+    .toggle-btn {
+        width: 24px;
+        height: 48px;
     }
 }
