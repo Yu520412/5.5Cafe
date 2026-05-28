@@ -19,25 +19,7 @@
         </div>
         
         <div class="header-right">
-            <div class="social-links">
-                <a href="#" id="link-ig" target="_blank" class="social-btn ig-btn">
-                    <i class="fa-brands fa-instagram"></i> Instagram
-                </a>
-                <a href="#" id="link-whatsapp" target="_blank" class="social-btn whatsapp-btn">
-                    <i class="fa-brands fa-whatsapp"></i> Whatsapp
-                </a>
-                <!-- <a href="#" id="link-facebook" target="_blank" class="social-btn facebook-btn">
-                    <i class="fa-brands fa-facebook"></i> Facebook
-                </a> -->
-                <a href="#" id="link-googlemaps" target="_blank" class="social-btn google-btn">
-                    <i class="fa-brands fa-google"></i> Google Maps
-                </a>
-                <div class="address-text" id="shop-address" style="display: none;"></div>
-                <button class="copy-btn" onclick="copyAddress()" id="copyBtn">
-                    <i class="fa-regular fa-copy"></i> <span data-i18n="copy_address">复制地址</span>
-                </button>
-            </div>
-            
+            <!-- 顶部的语言切换器保持保留 -->
             <div class="address-container lang-switcher">
                 <button class="social-btn lang-btn" onclick="changeLanguage('zh')">中文</button>
                 <button class="social-btn lang-btn" onclick="changeLanguage('en')">EN</button>
@@ -46,22 +28,103 @@
         </div>
     </header>
 
+    <!-- 右侧隐藏式悬浮侧边栏（点击箭头展开/收起，完美解决手机端拥挤问题） -->
+    <div class="floating-social-box" id="socialBox">
+        <button class="toggle-btn">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="menu-items">
+            <a href="#" id="link-ig" target="_blank" class="circle-btn ig-btn">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" id="link-whatsapp" target="_blank" class="circle-btn whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <!-- <a href="#" id="link-facebook" target="_blank" class="circle-btn facebook-btn">
+                <i class="fa-brands fa-facebook"></i>
+            </a> -->
+            <a href="#" id="link-googlemaps" target="_blank" class="circle-btn google-btn">
+                <i class="fa-brands fa-google"></i>
+            </a>
+            <!-- 隐藏读取地址的文本框（给复制功能使用） -->
+            <div class="address-text" id="shop-address" style="display: none;"></div>
+            <button class="circle-btn copy-btn" onclick="copyAddress()" id="copyBtn">
+                <i class="fa-regular fa-copy"></i>
+            </button>
+        </div>
+    </div>
+
     <section class="menu-display-area">
         <aside class="category-sidebar">
             <h3 class="category-title"><i class="fa-solid fa-list-ul"></i> <span data-i18n="menu_category">饮品分类</span></h3>
             <ul class="category-list" id="category-tabs">
-                <li class="active" data-target="zp1" data-i18n="B1">招牌推荐</li>
+                <li class="active" data-target="zp4" data-i18n="B4">总菜单</li>
+                <li data-target="zp1" data-i18n="B1">招牌推荐</li>
                 <li data-target="zp2" data-i18n="B2">水果茶系列</li>
                 <li data-target="zp3" data-i18n="B3">奶茶系列</li>
-                <li data-target="zp4" data-i18n="B4">总菜单</li>
                 <li data-target="zp6" data-i18n="B5">特色甜点</li>
             </ul>
         </aside>
 
         <div class="image-gallery-container">
+            <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
+            <!-- 总菜单 -->
+            <div id="zp4" class="gallery-section active">
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_1">水果茶系列</h3>
+                    <li data-i18n="ZD1">新鲜柠檬水</li>
+                    <li data-i18n="ZD2">草莓柠檬水</li>
+                    <li data-i18n="ZD3">番石榴柠檬茶</li>
+                    <li data-i18n="ZD4">野酸角汁</li>
+                    <li data-i18n="ZD5">草莓茉莉茶</li>
+                    <li data-i18n="ZD6">草莓泰式绿茶</li>
+                    <li data-i18n="ZD7">泰式柠檬红茶</li>
+                    <li data-i18n="ZD8">泰式柠檬绿茶</li>
+                    <li data-i18n="ZD9">葡萄柠檬茶</li>
+                    <li data-i18n="ZD10">冬季茉莉茶</li>
+                    <li data-i18n="ZD11">百香果茶</li>
+                    <li data-i18n="ZD12">芒果茶</li>
+                </ul>
+            
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_2">奶茶系列</h3>
+                    <li data-i18n="ZD13">经典奶茶</li>
+                    <li data-i18n="ZD14">黑糖珍珠奶茶</li>
+                    <li data-i18n="ZD15">泰式奶茶</li>
+                    <li data-i18n="ZD16">泰式绿奶茶</li>
+                    <li data-i18n="ZD17">草莓泰式绿茶</li>
+                    <li data-i18n="ZD18">草莓抹茶奶茶</li>
+                </ul>
+
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_3">冰淇淋系列</h3>
+                    <li data-i18n="ZD19">5.5 冰淇淋</li>
+                    <li data-i18n="ZD20">原味圣代</li>
+                    <li data-i18n="ZD21">黑糖圣代</li>
+                    <li data-i18n="ZD22">草莓冰淇淋</li>
+                    <li data-i18n="ZD23">巧克力冰淇淋</li>
+                    <li data-i18n="ZD24">芒果冰淇淋</li>
+                </ul>
+            
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_4">冰沙系列</h3>
+                    <li data-i18n="ZD25">黑芝麻冰沙</li>
+                    <li data-i18n="ZD26">花生冰沙</li>
+                    <li data-i18n="ZD27">草莓冰沙</li>
+                    <li data-i18n="ZD28">百香果冰沙</li>
+                </ul>
+            
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_5">特色甜点</h3>
+                    <li data-i18n="ZD29">Duang Duang 兔兔</li>
+                    <li data-i18n="ZD30">山楂甜点</li>
+                    <li data-i18n="ZD31">红豆甜点</li>
+                    <li data-i18n="ZD32">桃子甜点</li>
+                </ul>
+            </div>
 <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
             <!-- 招牌推荐 -->
-            <div id="zp1" class="gallery-section active">
+            <div id="zp1" class="gallery-section">
                 <div class="gallery-big">
                     <img src="./广告图/大屏区/1.png" alt="招牌大图">
                 </div>
@@ -134,61 +197,6 @@
                         <h3 data-i18n="NC2">泰式奶茶</h3>
                     </div>
                 </div>
-            </div>
-<!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
-            <!-- 总菜单 -->
-            <div id="zp4" class="gallery-section">
-                <ul class="menu-list">
-                    <h3 data-i18n="BT_1">水果茶系列</h3>
-                    <li data-i18n="ZD1">新鲜柠檬水</li>
-                    <li data-i18n="ZD2">草莓柠檬水</li>
-                    <li data-i18n="ZD3">番石榴柠檬茶</li>
-                    <li data-i18n="ZD4">野酸角汁</li>
-                    <li data-i18n="ZD5">草莓茉莉茶</li>
-                    <li data-i18n="ZD6">草莓泰式绿茶</li>
-                    <li data-i18n="ZD7">泰式柠檬红茶</li>
-                    <li data-i18n="ZD8">泰式柠檬绿茶</li>
-                    <li data-i18n="ZD9">葡萄柠檬茶</li>
-                    <li data-i18n="ZD10">冬季茉莉茶</li>
-                    <li data-i18n="ZD11">百香果茶</li>
-                    <li data-i18n="ZD12">芒果茶</li>
-                </ul>
-            
-                <ul class="menu-list">
-                    <h3 data-i18n="BT_2">奶茶系列</h3>
-                    <li data-i18n="ZD13">经典奶茶</li>
-                    <li data-i18n="ZD14">黑糖珍珠奶茶</li>
-                    <li data-i18n="ZD15">泰式奶茶</li>
-                    <li data-i18n="ZD16">泰式绿奶茶</li>
-                    <li data-i18n="ZD17">草莓泰式绿茶</li>
-                    <li data-i18n="ZD18">草莓抹茶奶茶</li>
-                </ul>
-
-                <ul class="menu-list">
-                    <h3 data-i18n="BT_3">冰淇淋系列</h3>
-                    <li data-i18n="ZD19">5.5 冰淇淋</li>
-                    <li data-i18n="ZD20">原味圣代</li>
-                    <li data-i18n="ZD21">黑糖圣代</li>
-                    <li data-i18n="ZD22">草莓冰淇淋</li>
-                    <li data-i18n="ZD23">巧克力冰淇淋</li>
-                    <li data-i18n="ZD24">芒果冰淇淋</li>
-                </ul>
-            
-                <ul class="menu-list">
-                    <h3 data-i18n="BT_4">冰沙系列</h3>
-                    <li data-i18n="ZD25">黑芝麻冰沙</li>
-                    <li data-i18n="ZD26">花生冰沙</li>
-                    <li data-i18n="ZD27">草莓冰沙</li>
-                    <li data-i18n="ZD28">百香果冰沙</li>
-                </ul>
-            
-                <ul class="menu-list">
-                    <h3 data-i18n="BT_5">特色甜点</h3>
-                    <li data-i18n="ZD29">Duang Duang 兔兔</li>
-                    <li data-i18n="ZD30">山楂甜点</li>
-                    <li data-i18n="ZD31">红豆甜点</li>
-                    <li data-i18n="ZD32">桃子甜点</li>
-                </ul>
             </div>
             
 <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
