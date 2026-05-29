@@ -26,6 +26,8 @@ const translations = {
         'B3': '奶茶系列',
         'B4': '总菜单',
         'B5': '特色甜点',
+        'B6': '气泡系列',
+
         // 招牌推荐
         'ZP1': '草莓泰式绿奶',
         'ZP2': '泰式奶茶',
@@ -66,9 +68,9 @@ const translations = {
         'ZD19': '5.5 冰淇淋',
         'ZD20': '原味圣代',
         'ZD21': '黑糖圣代',
-        'ZD22': '草莓冰淇淋',
-        'ZD23': '巧克力冰淇淋',
-        'ZD24': '芒果冰淇淋',
+        'ZD22': '草莓圣代',
+        'ZD23': '巧克力圣代',
+        'ZD24': '芒果圣代',
 
         'BT_4': '冰沙系列',
         'ZD25': '黑芝麻冰沙',
@@ -81,9 +83,29 @@ const translations = {
         'ZD30': '山楂甜点',
         'ZD31': '红豆甜点',
         'ZD32': '桃子甜点',
+
+        'BT_6': '气泡系列',
+        'ZD33': '嫣红杨梅气泡饮',
+        'ZD34': '粉红葡萄柚气泡饮',
+        'ZD35': '鲜柠气泡饮',
+        'ZD36': '桃花苏打',
+        'ZD37': '热带百香果气泡饮',
+        'ZD38': '芭乐微风',
+        'ZD39': '芒果爆爆气泡饮',
+        'ZD40': '石榴气泡饮',
+
         // 特色甜点
         'TS1': '5.5 冰淇淋',
-        'TS2': 'Duang Duang 兔兔'
+        'TS2': 'Duang Duang 兔兔',
+        // 冰沙系列
+        'BS1': '嫣红杨梅气泡饮',
+        'BS2': '粉红葡萄柚气泡饮',
+        'BS3': '鲜柠气泡饮',
+        'BS4': '桃花苏打',
+        'BS5': '热带百香果气泡饮',
+        'BS6': '芭乐微风',
+        'BS7': '芒果爆爆气泡饮',
+        'BS8': '石榴气泡饮'
         
     },
     'en': {
@@ -96,6 +118,7 @@ const translations = {
         'B3': 'Milk Tea Series',
         'B4': 'Full Menu',
         'B5': 'Signature Desserts',
+        'B6': 'Sparkling Series',
         // 招牌推荐
         'ZP1': 'Strawberry Thai Green Milk',
         'ZP2': 'Thai Milk Tea',
@@ -136,9 +159,9 @@ const translations = {
         'ZD19': '5.5 Ice Cream',
         'ZD20': 'Pure Sundae',
         'ZD21': 'Brown Sugar Sundae',
-        'ZD22': 'Strawberry Ice Cream',
-        'ZD23': 'Chocolate Ice Cream',
-        'ZD24': 'Mango Ice Cream',
+        'ZD22': 'Strawberry Sundae',
+        'ZD23': 'Chocolate Sundae',
+        'ZD24': 'Mango Sundae',
 
         'BT_4': 'Smoothie Series',
         'ZD25': 'Black Sesame Smoothie',
@@ -151,9 +174,29 @@ const translations = {
         'ZD30': 'Hawthorn',
         'ZD31': 'Red Bean',
         'ZD32': 'Peach',
+
+        'BT_6': 'Sparkling Series',
+        'ZD33': 'Ruby Yangmei Spark',
+        'ZD34': 'Pink Grapefruit Fizz',
+        'ZD35': 'Fresh Lemon Fizz',
+        'ZD36': 'Peach Blossom Soda',
+        'ZD37': 'Tropical Passion Spark',
+        'ZD38': 'Guava Breeze',
+        'ZD39': 'Mango Pop',
+        'ZD40': 'Pomegranate Spark',
+
         // 特色甜点
         'TS1': '5.5 Ice Cream',
-        'TS2': 'Duang Duang Rabbit'
+        'TS2': 'Duang Duang Rabbit',
+        // 冰沙系列
+        'BS1': 'Ruby Yangmei Spark',
+        'BS2': 'Pink Grapefruit Fizz',
+        'BS3': 'Fresh Lemon Fizz',
+        'BS4': 'Peach Blossom Soda',
+        'BS5': 'Tropical Passion Spark',
+        'BS6': 'Guava Breeze',
+        'BS7': 'Mango Pop',
+        'BS8': 'Pomegranate Spark'
     },
     'ms': {
         'copy_address': 'Salin Alamat',
@@ -165,6 +208,7 @@ const translations = {
         'B3': 'Siri Teh Susu',
         'B4': 'Menu Penuh',
         'B5': 'Pencuci Mulut Istimewa',
+        'B6': 'Siri Soda',
         // 招牌推荐
         'ZP1': 'Susu Hijau Thai Strawberi',
         'ZP2': 'Teh Susu Thai',
@@ -205,9 +249,9 @@ const translations = {
         'ZD19': 'Aiskrim 5.5',
         'ZD20': 'Sundae Asli',
         'ZD21': 'Sundae Gula Perang',
-        'ZD22': 'Aiskrim Strawberi',
-        'ZD23': 'Aiskrim Coklat',
-        'ZD24': 'Aiskrim Mangga',
+        'ZD22': 'Sundae Strawberi',
+        'ZD23': 'Sundae Coklat',
+        'ZD24': 'Sundae Mangga',
 
         'BT_4': 'Siri Smoothie',
         'ZD25': 'Smoothie Bijan Hitam',
@@ -220,9 +264,28 @@ const translations = {
         'ZD30': 'Hawthorn',
         'ZD31': 'Kacang Merah',
         'ZD32': 'Pic',
+
+        'BT_6': 'Siri Minuman Berkarbonat',
+        'ZD33': 'Sparkling Yangmei Delima',
+        'ZD34': 'Fizz Limau Gedang Merah Jambu',
+        'ZD35': 'Fizz Lemon Segar',
+        'ZD36': 'Soda Bunga Pic',
+        'ZD37': 'Sparkling Markisa Tropika',
+        'ZD38': 'Bayu Jambu Batu',
+        'ZD39': 'Pop Mangga',
+        'ZD40': 'Sparkling Delima',
         // 特色甜点
         'TS1': 'Aiskrim 5.5',
-        'TS2': 'Arnab Duang Duang'
+        'TS2': 'Arnab Duang Duang',
+        // 冰沙系列
+        'BS1': 'Sparkling Yangmei Delima',
+        'BS2': 'Fizz Limau Gedang Merah Jambu',
+        'BS3': 'Fizz Lemon Segar',
+        'BS4': 'Soda Bunga Pic',
+        'BS5': 'Sparkling Markisa Tropika',
+        'BS6': 'Bayu Jambu Batu',
+        'BS7': 'Pop Mangga',
+        'BS8': 'Sparkling Delima'
     }
 };
 
