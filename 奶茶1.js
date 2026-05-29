@@ -77,12 +77,12 @@ const translations = {
         'ZD26': '花生冰沙',
         'ZD27': '草莓冰沙',
         'ZD28': '百香果冰沙',
-
-        'BT_5': '特色甜点',
-        'ZD29': 'Duang Duang 兔兔',
         'ZD30': '山楂甜点',
         'ZD31': '红豆甜点',
         'ZD32': '桃子甜点',
+
+        'BT_5': '特色甜点',
+        'ZD29': 'Duang Duang 兔兔',
 
         'BT_6': '气泡系列',
         'ZD33': '嫣红杨梅气泡饮',
@@ -101,7 +101,7 @@ const translations = {
         'BS1': '嫣红杨梅气泡饮',
         'BS2': '粉红葡萄柚气泡饮',
         'BS3': '鲜柠气泡饮',
-        'BS4': '桃花苏打',
+        'BS4': '桃之夭夭苏打',
         'BS5': '热带百香果气泡饮',
         'BS6': '芭乐微风',
         'BS7': '芒果爆爆气泡饮',
@@ -168,12 +168,12 @@ const translations = {
         'ZD26': 'Peanut Smoothie',
         'ZD27': 'Strawberry Smoothie',
         'ZD28': 'Passion Fruit Smoothie',
-
-        'BT_5': 'Special Dessert',
-        'ZD29': 'Duang Duang Rabbit',
         'ZD30': 'Hawthorn',
         'ZD31': 'Red Bean',
         'ZD32': 'Peach',
+
+        'BT_5': 'Special Dessert',
+        'ZD29': 'Duang Duang Rabbit',
 
         'BT_6': 'Sparkling Series',
         'ZD33': 'Ruby Yangmei Spark',
@@ -258,12 +258,12 @@ const translations = {
         'ZD26': 'Smoothie Kacang',
         'ZD27': 'Smoothie Strawberi',
         'ZD28': 'Smoothie Markisa',
-
-        'BT_5': 'Pencuci Mulut Istimewa',
-        'ZD29': 'Arnab Duang Duang',
         'ZD30': 'Hawthorn',
         'ZD31': 'Kacang Merah',
         'ZD32': 'Pic',
+
+        'BT_5': 'Pencuci Mulut Istimewa',
+        'ZD29': 'Arnab Duang Duang',
 
         'BT_6': 'Siri Minuman Berkarbonat',
         'ZD33': 'Sparkling Yangmei Delima',
@@ -316,14 +316,16 @@ function changeLanguage(lang) {
 
 /**
  * Copy address to clipboard / 复制地址到剪贴板 / Salin alamat ke papan keratan
+ * @param {HTMLElement} clickedBtn - 接收当前被点击的按钮
  */
-function copyAddress() {
+function copyAddress(clickedBtn) {
     const addressText = document.getElementById('shop-address').innerText;
-    const copyBtn = document.getElementById('copyBtn');
-    const btnIcon = copyBtn.querySelector('i');
+    // 直接在被点击的这个按钮里面找图标
+    const btnIcon = clickedBtn.querySelector('i');
 
     navigator.clipboard.writeText(addressText).then(() => {
-        copyBtn.classList.add('success');
+        // 让被点击的按钮变色、打勾
+        clickedBtn.classList.add('success');
         btnIcon.className = "fa-solid fa-check";
 
         // 弹出简易通知提示
@@ -341,8 +343,9 @@ function copyAddress() {
         toast.innerText = translations[currentLang]['copied'];
         document.body.appendChild(toast);
 
+        // 两秒后恢复原状
         setTimeout(() => {
-            copyBtn.classList.remove('success');
+            clickedBtn.classList.remove('success');
             btnIcon.className = "fa-regular fa-copy";
             toast.remove();
         }, 2000);
