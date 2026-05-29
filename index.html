@@ -19,16 +19,14 @@
         </div>
         
         <div class="header-right">
-            <!-- 顶部的语言切换器保持保留 -->
             <div class="address-container lang-switcher">
-                <button class="social-btn lang-btn" onclick="changeLanguage('zh')">中文</button>
-                <button class="social-btn lang-btn" onclick="changeLanguage('en')">EN</button>
-                <button class="social-btn lang-btn" onclick="changeLanguage('ms')">BM</button>
+                <button class="social-btn lang-btn " onclick="changeLanguage('en')">EN</button>
+                <button class="social-btn lang-btn " onclick="changeLanguage('ms')">BM</button>
+                <button class="social-btn lang-btn " onclick="changeLanguage('zh')">中文</button>
             </div>
         </div>
     </header>
 
-    <!-- 右侧隐藏式悬浮侧边栏（点击箭头展开/收起，完美解决手机端拥挤问题） -->
     <div class="floating-social-box" id="socialBox">
         <button class="toggle-btn">
             <i class="fa-solid fa-chevron-left"></i>
@@ -40,13 +38,9 @@
             <a href="#" id="link-whatsapp" target="_blank" class="circle-btn whatsapp-btn">
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
-            <!-- <a href="#" id="link-facebook" target="_blank" class="circle-btn facebook-btn">
-                <i class="fa-brands fa-facebook"></i>
-            </a> -->
             <a href="#" id="link-googlemaps" target="_blank" class="circle-btn google-btn">
                 <i class="fa-brands fa-google"></i>
             </a>
-            <!-- 隐藏读取地址的文本框（给复制功能使用） -->
             <div class="address-text" id="shop-address" style="display: none;"></div>
             <button class="circle-btn copy-btn" onclick="copyAddress()" id="copyBtn">
                 <i class="fa-regular fa-copy"></i>
@@ -56,74 +50,87 @@
 
     <section class="menu-display-area">
         <aside class="category-sidebar">
-            <h3 class="category-title"><i class="fa-solid fa-list-ul"></i> <span data-i18n="menu_category">饮品分类</span></h3>
+            <h3 class="category-title"><i class="fa-solid fa-list-ul"></i> <span data-i18n="menu_category">Categories</span></h3>
             <ul class="category-list" id="category-tabs">
-                <li class="active" data-target="zp4" data-i18n="B4">总菜单</li>
-                <li data-target="zp1" data-i18n="B1">招牌推荐</li>
-                <li data-target="zp2" data-i18n="B2">水果茶系列</li>
-                <li data-target="zp3" data-i18n="B3">奶茶系列</li>
-                <li data-target="zp6" data-i18n="B5">特色甜点</li>
+                <li class="active" data-target="zp4" data-i18n="B4">Full Menu</li>
+                <li data-target="zp1" data-i18n="B1">Signature Picks</li>
+                <li data-target="zp2" data-i18n="B2">Fruit Tea Series</li>
+                <li data-target="zp3" data-i18n="B3">Milk Tea Series</li>
+                <li data-target="zp5" data-i18n="B5">Signature Desserts</li>
+                <li data-target="zp6" data-i18n="B6">Sparkling Series</li>
             </ul>
         </aside>
 
         <div class="image-gallery-container">
-            <!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
-            <!-- 总菜单 -->
             <div id="zp4" class="gallery-section active">
+                <!-- 水果茶系列 -->
                 <ul class="menu-list">
-                    <h3 data-i18n="BT_1">水果茶系列</h3>
-                    <li data-i18n="ZD1">新鲜柠檬水</li>
-                    <li data-i18n="ZD2">草莓柠檬水</li>
-                    <li data-i18n="ZD3">番石榴柠檬茶</li>
-                    <li data-i18n="ZD4">野酸角汁</li>
-                    <li data-i18n="ZD5">草莓茉莉茶</li>
-                    <li data-i18n="ZD6">草莓泰式绿茶</li>
-                    <li data-i18n="ZD7">泰式柠檬红茶</li>
-                    <li data-i18n="ZD8">泰式柠檬绿茶</li>
-                    <li data-i18n="ZD9">葡萄柠檬茶</li>
-                    <li data-i18n="ZD10">冬季茉莉茶</li>
-                    <li data-i18n="ZD11">百香果茶</li>
-                    <li data-i18n="ZD12">芒果茶</li>
+                    <h3 data-i18n="BT_1">Fruit Tea Series</h3>
+                    <li data-i18n="ZD1">Fresh Lemonade</li>
+                    <li data-i18n="ZD2">Strawberry Lemonade</li>
+                    <li data-i18n="ZD3">Guava Lemon Tea</li>
+                    <li data-i18n="ZD4">Wild Sour Horn Juice</li>
+                    <li data-i18n="ZD5">Strawberry Jasmine Tea</li>
+                    <li data-i18n="ZD6">Thai Green Strawberry</li>
+                    <li data-i18n="ZD7">Thai Lemon Black Tea</li>
+                    <li data-i18n="ZD8">Thai Lemon Green Tea</li>
+                    <li data-i18n="ZD9">Grape Lemon Tea</li>
+                    <li data-i18n="ZD10">Winter Jasmine Tea</li>
+                    <li data-i18n="ZD11">Passion Fruit Tea</li>
+                    <li data-i18n="ZD12">Mango Fruit Tea</li>
                 </ul>
-            
+                <!-- 奶茶系列 -->
                 <ul class="menu-list">
-                    <h3 data-i18n="BT_2">奶茶系列</h3>
-                    <li data-i18n="ZD13">经典奶茶</li>
-                    <li data-i18n="ZD14">黑糖珍珠奶茶</li>
-                    <li data-i18n="ZD15">泰式奶茶</li>
-                    <li data-i18n="ZD16">泰式绿奶茶</li>
-                    <li data-i18n="ZD17">草莓泰式绿茶</li>
-                    <li data-i18n="ZD18">草莓抹茶奶茶</li>
+                    <h3 data-i18n="BT_2">Milk Tea Series</h3>
+                    <li data-i18n="ZD13">Classic Milk Tea</li>
+                    <li data-i18n="ZD14">Brown Sugar Boba Milk</li>
+                    <li data-i18n="ZD15">Thai Milk Tea</li>
+                    <li data-i18n="ZD16">Thai Green Milk Tea</li>
+                    <li data-i18n="ZD17">Strawberry Thai Green Tea</li>
+                    <li data-i18n="ZD18">Strawberry Matcha Milk Tea</li>
                 </ul>
-
+                <!-- 冰淇淋系列 -->
                 <ul class="menu-list">
-                    <h3 data-i18n="BT_3">冰淇淋系列</h3>
-                    <li data-i18n="ZD19">5.5 冰淇淋</li>
-                    <li data-i18n="ZD20">原味圣代</li>
-                    <li data-i18n="ZD21">黑糖圣代</li>
-                    <li data-i18n="ZD22">草莓冰淇淋</li>
-                    <li data-i18n="ZD23">巧克力冰淇淋</li>
-                    <li data-i18n="ZD24">芒果冰淇淋</li>
+                    <h3 data-i18n="BT_3">Ice Cream Series</h3>
+                    <li data-i18n="ZD19">5.5 Ice Cream</li>
+                    <li data-i18n="ZD20">Pure Sundae</li>
+                    <li data-i18n="ZD21">Brown Sugar Sundae</li>
+                    <li data-i18n="ZD22">Strawberry Ice Cream</li>
+                    <li data-i18n="ZD23">Chocolate Ice Cream</li>
+                    <li data-i18n="ZD24">Mango Ice Cream</li>
                 </ul>
-            
+                <!-- 冰沙系列 -->
                 <ul class="menu-list">
-                    <h3 data-i18n="BT_4">冰沙系列</h3>
-                    <li data-i18n="ZD25">黑芝麻冰沙</li>
-                    <li data-i18n="ZD26">花生冰沙</li>
-                    <li data-i18n="ZD27">草莓冰沙</li>
-                    <li data-i18n="ZD28">百香果冰沙</li>
+                    <h3 data-i18n="BT_4">Smoothie Series</h3>
+                    <li data-i18n="ZD25">Black Sesame Smoothie</li>
+                    <li data-i18n="ZD26">Peanut Smoothie</li>
+                    <li data-i18n="ZD27">Strawberry Smoothie</li>
+                    <li data-i18n="ZD28">Passion Fruit Smoothie</li>
                 </ul>
-            
+                <!-- 特色甜点 -->
                 <ul class="menu-list">
-                    <h3 data-i18n="BT_5">特色甜点</h3>
-                    <li data-i18n="ZD29">Duang Duang 兔兔</li>
-                    <li data-i18n="ZD30">山楂甜点</li>
-                    <li data-i18n="ZD31">红豆甜点</li>
-                    <li data-i18n="ZD32">桃子甜点</li>
+                    <h3 data-i18n="BT_5">Special Dessert</h3>
+                    <li data-i18n="ZD29">Duang Duang Rabbit</li>
+                    <li data-i18n="ZD30">Hawthorn</li>
+                    <li data-i18n="ZD31">Red Bean</li>
+                    <li data-i18n="ZD32">Peach</li>
+                </ul>
+                <!-- 气泡系列 -->
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_6">Sparkling Series</h3>
+                    <li data-i18n="ZD33">Ruby Yangmei Spark</li>
+                    <li data-i18n="ZD34">Pink Grapefruit Fizz</li>
+                    <li data-i18n="ZD35">Fresh Lemon Fizz</li>
+                    <li data-i18n="ZD36">Peach Blossom Soda</li>
+                    <li data-i18n="ZD37">Tropical Passion Spark</li>
+                    <li data-i18n="ZD38">Guava Breeze</li>
+                    <li data-i18n="ZD39">Mango Pop</li>
+                    <li data-i18n="ZD40">Pomegranate Spark</li>
                 </ul>
             </div>
-<!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
-            <!-- 招牌推荐 -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
             <div id="zp1" class="gallery-section">
                 <div class="gallery-big">
                     <img src="./广告图/大屏区/1.png" alt="招牌大图">
@@ -132,94 +139,176 @@
                 <div class="gallery-item">
                     <img src="./广告图/招牌推荐/1.png" alt="招牌">
                     <div class="gallery-text">
-                        <h3 data-i18n="ZP1">草莓泰式绿奶</h3>
+                        <h3 data-i18n="ZP1">Strawberry Thai Green Milk</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="./广告图/招牌推荐/2.png" alt="招牌">
                     <div class="gallery-text">
-                        <h3 data-i18n="ZP2">泰式奶茶</h3>
+                        <h3 data-i18n="ZP2">Thai Milk Tea</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="./广告图/招牌推荐/3.png" alt="招牌">
                     <div class="gallery-text">
-                        <h3 data-i18n="ZP3">葡萄柠檬茶</h3>
+                        <h3 data-i18n="ZP3">Grape Lemon Tea</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="./广告图/招牌推荐/4.png" alt="招牌">
                     <div class="gallery-text">
-                        <h3 data-i18n="ZP4">黑芝麻冰沙</h3>
+                        <h3 data-i18n="ZP4">Black Sesame Smoothie</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="./广告图/招牌推荐/5.png" alt="招牌">
                     <div class="gallery-text">
-                        <h3 data-i18n="ZP5">5.5 冰淇淋</h3>
+                        <h3 data-i18n="ZP5">5.5 Ice Cream</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="./广告图/招牌推荐/6.png" alt="招牌">
                     <div class="gallery-text">
-                        <h3 data-i18n="ZP6">Duang Duang 兔兔</h3>
+                        <h3 data-i18n="zp5">Duang Duang Rabbit</h3>
                     </div>
                 </div>
             </div>
-<!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!-- 水果茶系列 -->
             <div id="zp2" class="gallery-section">
                 <div class="gallery-item">
                     <img src="./广告图/水果茶/1.png" alt="水果茶系列">
                     <div class="gallery-text">
-                        <h3 data-i18n="SG1">柠檬水</h3>
+                        <h3 data-i18n="SG1">Lemonade</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="./广告图/水果茶/2.png" alt="水果茶系列">
                     <div class="gallery-text">
-                        <h3 data-i18n="SG2">百香果茶</h3>
+                        <h3 data-i18n="SG2">Passion Fruit Tea</h3>
                     </div>
                 </div>
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_1">Fruit Tea Series</h3>
+                    <li data-i18n="ZD1">Fresh Lemonade</li>
+                    <li data-i18n="ZD2">Strawberry Lemonade</li>
+                    <li data-i18n="ZD3">Guava Lemon Tea</li>
+                    <li data-i18n="ZD4">Wild Sour Horn Juice</li>
+                    <li data-i18n="ZD5">Strawberry Jasmine Tea</li>
+                    <li data-i18n="ZD6">Thai Green Strawberry</li>
+                    <li data-i18n="ZD7">Thai Lemon Black Tea</li>
+                    <li data-i18n="ZD8">Thai Lemon Green Tea</li>
+                    <li data-i18n="ZD9">Grape Lemon Tea</li>
+                    <li data-i18n="ZD10">Winter Jasmine Tea</li>
+                    <li data-i18n="ZD11">Passion Fruit Tea</li>
+                    <li data-i18n="ZD12">Mango Fruit Tea</li>
+                </ul>
             </div>
-<!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <!-- 奶茶系列 -->
             <div id="zp3" class="gallery-section">
                 <div class="gallery-item">
                     <img src="./广告图/奶茶系列/1.png" alt="奶茶系列">
                     <div class="gallery-text">
-                        <h3 data-i18n="NC1">草莓泰式绿奶</h3>
+                        <h3 data-i18n="NC1">Strawberry Thai Green Milk</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="./广告图/奶茶系列/2.png" alt="奶茶系列">
                     <div class="gallery-text">
-                        <h3 data-i18n="NC2">泰式奶茶</h3>
+                        <h3 data-i18n="NC2">Thai Milk Tea</h3>
                     </div>
                 </div>
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_2">Milk Tea Series</h3>
+                    <li data-i18n="ZD13">Classic Milk Tea</li>
+                    <li data-i18n="ZD14">Brown Sugar Boba Milk</li>
+                    <li data-i18n="ZD15">Thai Milk Tea</li>
+                    <li data-i18n="ZD16">Thai Green Milk Tea</li>
+                    <li data-i18n="ZD17">Strawberry Thai Green Tea</li>
+                    <li data-i18n="ZD18">Strawberry Matcha Milk Tea</li>
+                </ul>
             </div>
-            
-<!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
-             <!-- 特色甜点 -->
-            <div id="zp6" class="gallery-section">
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!-- 特色甜点 -->
+            <div id="zp5" class="gallery-section">
                 <div class="gallery-item">
                     <img src="./广告图/特色甜点/1.png" alt="特色甜点">
                     <div class="gallery-text">
-                        <h3 data-i18n="TS1">5.5 冰淇淋</h3>
+                        <h3 data-i18n="TS1">5.5 Ice Cream</h3>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="./广告图/特色甜点/2.png" alt="特色甜点">
                     <div class="gallery-text">
-                        <h3 data-i18n="TS2">Duang Duang 兔兔</h3>
+                        <h3 data-i18n="TS2">Duang Duang Rabbit</h3>
                     </div>
                 </div>
+                <!-- 冰淇淋系列 -->
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_3">Ice Cream Series</h3>
+                    <li data-i18n="ZD19">5.5 Ice Cream</li>
+                    <li data-i18n="ZD20">Pure Sundae</li>
+                    <li data-i18n="ZD21">Brown Sugar Sundae</li>
+                    <li data-i18n="ZD22">Strawberry Ice Cream</li>
+                    <li data-i18n="ZD23">Chocolate Ice Cream</li>
+                    <li data-i18n="ZD24">Mango Ice Cream</li>
+                </ul>
+                <!-- 特色甜点 -->
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_5">Special Dessert</h3>
+                    <li data-i18n="ZD29">Duang Duang Rabbit</li>
+                    <li data-i18n="ZD30">Hawthorn</li>
+                    <li data-i18n="ZD31">Red Bean</li>
+                    <li data-i18n="ZD32">Peach</li>
+                </ul>
+            </div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!-- 气泡系列 -->
+            <div id="zp6" class="gallery-section">
+                <div class="gallery-item">
+                    <img src="./广告图/气泡系列/1.png" alt="气泡">
+                    <div class="gallery-text">
+                        <h3 data-i18n="BS3">Fresh Lemon Fizz</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./广告图/气泡系列/2.png" alt="气泡">
+                    <div class="gallery-text">
+                        <h3 data-i18n="BS5">Tropical Passion Spark</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./广告图/气泡系列/3.png" alt="气泡">
+                    <div class="gallery-text">
+                        <h3 data-i18n="BS4">Peach Blossom Soda</h3>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./广告图/气泡系列/4.png" alt="气泡">
+                    <div class="gallery-text">
+                        <h3 data-i18n="BS8">Pomegranate</h3>
+                    </div>
+                </div>
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_6">Sparkling Series</h3>
+                    <li data-i18n="ZD33">Ruby Yangmei Spark</li>
+                    <li data-i18n="ZD34">Pink Grapefruit Fizz</li>
+                    <li data-i18n="ZD35">Fresh Lemon Fizz</li>
+                    <li data-i18n="ZD36">Peach Blossom Soda</li>
+                    <li data-i18n="ZD37">Tropical Passion Spark</li>
+                    <li data-i18n="ZD38">Guava Breeze</li>
+                    <li data-i18n="ZD39">Mango Pop</li>
+                    <li data-i18n="ZD40">Pomegranate Spark</li>
+                </ul>
             </div>
         </div>
             
-<!-- ～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～   -->
-
-    </section>
+</section>
 
     <footer>
         © 2026 5.5 Cafe. All Rights Reserved.
