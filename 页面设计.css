@@ -4,6 +4,14 @@
     --bg-color: #FFF8E1;
     --text-color: #3E2723;
     --accent-color: #D84315;
+    /* 1. 设置字体：优先使用楷体系列，如果没有再用衬线体兜底 */
+    font-family: "KaiTi", "STKaiti", "BiauKai", "华文楷体", "楷体", serif;
+    /* 2. 让文字倾斜 (Italic) */
+    font-style: italic;
+    /* 3. 字体粗细：楷体通常比较细，稍微加粗一点看起来更有力量 */
+    font-weight: 600;
+    /* 4. （可选）加一点微弱的文字阴影，让它看起来有点立体感 */
+    text-shadow: 1px 1px 2px rgba(145, 105, 90, 0.3);
 }
 
 * {
@@ -44,8 +52,20 @@ header {
     align-items: center;
 }
 
-.logo_word_span{
-    margin-left: 5px;
+.logo_word_span {
+    margin-left: 8px;
+    
+    /* 1. 设置字体：优先使用楷体系列，如果没有再用衬线体兜底 */
+    font-family: "KaiTi", "STKaiti", "BiauKai", "华文楷体", "楷体", serif;
+    
+    /* 2. 让文字倾斜 (Italic) */
+    font-style: italic;
+    
+    /* 3. 字体粗细：楷体通常比较细，稍微加粗一点看起来更有力量 */
+    font-weight: 600;
+    
+    /* 4. （可选）加一点微弱的文字阴影，让它看起来有点立体感 */
+    text-shadow: 1px 1px 2px rgba(145, 105, 90, 0.3);
 }
 
 .logo img {
