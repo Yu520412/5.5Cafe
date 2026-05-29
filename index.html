@@ -23,6 +23,11 @@
                 <button class="social-btn lang-btn " onclick="changeLanguage('en')">EN</button>
                 <button class="social-btn lang-btn " onclick="changeLanguage('ms')">BM</button>
                 <button class="social-btn lang-btn " onclick="changeLanguage('zh')">中文</button>
+
+                <button class="header-copy-btn" onclick="copyAddress(this)">
+                <i class="fa-regular fa-copy"></i>
+                <span data-i18n="copy_address">Copy Address</span>
+                </button>
             </div>
         </div>
     </header>
@@ -42,7 +47,7 @@
                 <i class="fa-brands fa-google"></i>
             </a>
             <div class="address-text" id="shop-address" style="display: none;"></div>
-            <button class="circle-btn copy-btn" onclick="copyAddress()" id="copyBtn">
+            <button class="circle-btn copy-btn" onclick="copyAddress(this)">
                 <i class="fa-regular fa-copy"></i>
             </button>
         </div>
@@ -106,11 +111,6 @@
                     <li data-i18n="ZD26">Peanut Smoothie</li>
                     <li data-i18n="ZD27">Strawberry Smoothie</li>
                     <li data-i18n="ZD28">Passion Fruit Smoothie</li>
-                </ul>
-                <!-- 特色甜点 -->
-                <ul class="menu-list">
-                    <h3 data-i18n="BT_5">Special Dessert</h3>
-                    <li data-i18n="ZD29">Duang Duang Rabbit</li>
                     <li data-i18n="ZD30">Hawthorn</li>
                     <li data-i18n="ZD31">Red Bean</li>
                     <li data-i18n="ZD32">Peach</li>
@@ -126,6 +126,11 @@
                     <li data-i18n="ZD38">Guava Breeze</li>
                     <li data-i18n="ZD39">Mango Pop</li>
                     <li data-i18n="ZD40">Pomegranate Spark</li>
+                </ul>
+                <!-- 特色甜点 -->
+                <ul class="menu-list">
+                    <h3 data-i18n="BT_5">Special Dessert</h3>
+                    <li data-i18n="ZD29">Duang Duang Rabbit</li>
                 </ul>
             </div>
 
@@ -169,7 +174,7 @@
                 <div class="gallery-item">
                     <img src="./广告图/招牌推荐/6.png" alt="招牌">
                     <div class="gallery-text">
-                        <h3 data-i18n="zp5">Duang Duang Rabbit</h3>
+                        <h3 data-i18n="ZP6">Duang Duang Rabbit</h3>
                     </div>
                 </div>
             </div>
@@ -261,9 +266,6 @@
                 <ul class="menu-list">
                     <h3 data-i18n="BT_5">Special Dessert</h3>
                     <li data-i18n="ZD29">Duang Duang Rabbit</li>
-                    <li data-i18n="ZD30">Hawthorn</li>
-                    <li data-i18n="ZD31">Red Bean</li>
-                    <li data-i18n="ZD32">Peach</li>
                 </ul>
             </div>
 
